@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Welcome</title>
+</head>
+<body>
+<p>Thank you for visiting our website! To get early access to our planned projects, please fill in the following quick questionnaire.</p>
+<form action="#" th:action="@{/welcome/submit}" th:object="${feedback}" method="post">
+    <div>
+        <label>Describe your experience with Green Fox Academy so far</label>
+        <input type="text" name="feeling" th:field="${feedback.feeling}"/>
+    </div>
+    <div>
+        <label>On a scale of 1 to 10, how likely are you to recommend Green Fox Academy to a friend?</label>
+        <input type="number" name="score" th:field="${feedback.score}"/>
+    </div>
+    <div>
+        <label>On a scale of 1 to 10, how likely are you to recommend Green Fox Academy to a friend?</label>
+        <input type="text" name="email" th:field="${feedback.email}"/>
+    </div>
+    <div>
+        <a th:href="@{/thankyou/}">
+            <button type="submit" value="addAndReturn" id="addAndReturn">Submit</button>
+        </a>
+    </div>
+</form>
+</body>
+</html>

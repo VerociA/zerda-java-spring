@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Posts</title>
+</head>
+<body>
+<a href="http://localhost:8080/posts/add">Add a new post</a>
+<h1>Posts</h1>
+<table>
+    <thead>
+    <th>Project name</th>
+    <th>Project type</th>
+    </thead>
+    <tbody>
+    <td th:each="project:${projects}">
+        <td th:text="${project.name}"></td>
+        <td th:text="${project.type}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
